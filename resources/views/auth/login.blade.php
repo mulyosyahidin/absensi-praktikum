@@ -1,3 +1,4 @@
+@section('title', 'Login SI Absensi')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
