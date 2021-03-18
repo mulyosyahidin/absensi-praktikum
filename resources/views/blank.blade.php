@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'SI Absensi')
+@section('title', '')
 
 @section('content')
     <div class="content">

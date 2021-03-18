@@ -10,16 +10,22 @@
         </a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
+            <li class="nav-item {{ __active('DashboardController') }}">
                 <a class="nav-link" href="./dashboard.html">
                     <i class="material-icons">dashboard</i>
                     <p>Dasbor</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./typography.html">
+            <li class="nav-item {{ __active('CourseController') }}">
+                <a class="nav-link" href="{{ route('courses.index') }}">
                     <i class="material-icons">library_books</i>
                     <p>Mata Kuliah</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('courses.index') }}">
+                    <i class="material-icons">bookmarks</i>
+                    <p>Absensi</p>
                 </a>
             </li>
             <li class="nav-item ">
