@@ -28,8 +28,8 @@
                     <p>Absensi</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+            <li class="nav-item {{ __active('StudentController') }}">
+                <a class="nav-link" href="{{ route('students.index') }}">
                     <i class="material-icons">supervisor_account</i>
                     <p>Mahasiswa</p>
                 </a>

@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Tambah Mata Kuliah')
+@section('title', 'Tambah Mahasiswa')
 
 @section('content')
     <div class="content">
@@ -8,10 +8,10 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title">Tambah Mata Kuliah</h4>
+                            <h4 class="card-title">Tambah Mahasiswa</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('courses.store') }}" method="POST">
+                            <form action="{{ route('students.store') }}" method="POST">
                                 @csrf
 
                                 <div class="row mt-3">
@@ -23,7 +23,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Nama Mata Kuliah</label>
+                                            <label class="bmd-label-floating">Nama Mahasiswa</label>
                                             <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                 name="name" value="{{ old('name') }}" required>
 
@@ -36,12 +36,12 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Semester</label>
-                                            <input type="number"
-                                                class="form-control @error('semester') is-invalid @enderror" min="1"
-                                                max="8" name="semester" value="{{ old('semester') }}" required>
+                                            <label class="bmd-label-floating">NPM</label>
+                                            <input type="text"
+                                                class="form-control @error('npm') is-invalid @enderror"
+                                                    name="npm" value="{{ old('npm') }}" required>
 
-                                            @error('semester')
+                                            @error('npm')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
