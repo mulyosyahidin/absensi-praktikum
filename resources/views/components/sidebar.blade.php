@@ -22,8 +22,8 @@
                     <p>Mata Kuliah</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('courses.index') }}">
+            <li class="nav-item {{ __active('AttendanceController') }}">
+                <a class="nav-link" href="{{ route('attendances.index') }}">
                     <i class="material-icons">bookmarks</i>
                     <p>Absensi</p>
                 </a>
@@ -36,7 +36,7 @@
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="./tables.html">
-                    <i class="material-icons">pie_chart_outline</i>
+                    <i class="material-icons">pie_chart</i>
                     <p>Laporan</p>
                 </a>
             </li>

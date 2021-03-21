@@ -4,15 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Student extends Model
+class AttendanceStatus extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
-    public $fillable = ['name', 'npm'];
-
-    public function studentAttendance()
+    public function attendanceStatus()
     {
         return $this->belongsTo(AttendanceData::class);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
@@ -25,6 +26,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('courses', CourseController::class);
     Route::post('students/import', [StudentController::class, 'import'])->name('students.import');
     Route::resource('students', StudentController::class);
+    Route::get('attendances/meeting/{meeting}', [AttendanceController::class, 'meeting'])->name('attendances.meeting');
+    Route::post('attendances/meeting/{meeting}', [AttendanceController::class, 'storeAttendance'])->name('attendances.meeting.store');
+    Route::get('attendances/{attendance}/new-meeting', [AttendanceController::class, 'newMeeting'])->name('attendances.meeting.new');
+    Route::post('attendances/{attendance}/new-meeting', [AttendanceController::class, 'storeMeeting'])->name('attendances.meeting.new.store');
+    Route::get('attendances/{attendance}/report', [AttendanceController::class, 'report'])->name('attendances.report');
+    Route::resource('attendances', AttendanceController::class);
 });
 
 require __DIR__.'/auth.php';
