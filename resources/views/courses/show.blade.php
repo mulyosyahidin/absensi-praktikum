@@ -26,14 +26,16 @@
                         </div>
                         <div class="card-footer">
                             <div class="text-left">
-                                <a href="{{ route('courses.edit', $course->id) }}">
+                                <a href="{{ route('courses.edit', $course->id) }}"
+                                    rel="tooltip" title="Edit Data Mata Kuliah">
                                     <span class="btn btn-warning btn-sm">
                                         <span class="material-icons">
                                             mode_edit
                                         </span>
                                     </span>
                                 </a>
-                                <a href="#" data-toggle="modal" data-target="#delete-modal">
+                                <a href="#" data-toggle="modal" data-target="#delete-modal"
+                                    rel="tooltip" title="Hapus Mata Kuliah">
                                     <span class="btn btn-danger btn-sm">
                                         <span class="material-icons">
                                             delete

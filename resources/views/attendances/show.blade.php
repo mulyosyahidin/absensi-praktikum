@@ -36,21 +36,24 @@
                         </div>
                         <div class="card-footer">
                             <div class="text-left">
-                                <a href="{{ route('attendances.report', $attendance->id) }}">
+                                <a href="{{ route('attendances.report', $attendance->id) }}"
+                                    rel="tooltip" title="Buat Pertemuan Baru">
                                     <span class="btn btn-info btn-sm">
                                         <span class="material-icons">
                                             book
                                         </span>
                                     </span>
                                 </a>
-                                <a href="{{ route('courses.edit', $attendance->id) }}">
+                                <a href="{{ route('courses.edit', $attendance->id) }}"
+                                    rel="tooltip" title="Edit Absensi">
                                     <span class="btn btn-warning btn-sm">
                                         <span class="material-icons">
                                             mode_edit
                                         </span>
                                     </span>
                                 </a>
-                                <a href="#" data-toggle="modal" data-target="#delete-modal">
+                                <a href="#" data-toggle="modal" data-target="#delete-modal"
+                                    rel="tooltip" title="Hapus Absensi">
                                     <span class="btn btn-danger btn-sm">
                                         <span class="material-icons">
                                             delete

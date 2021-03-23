@@ -13,12 +13,14 @@
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <a href="{{ route('students.create') }}" data-toggle="tooltip" title="Tambah Data Mahasiswa">
-                                <span class="float-right btn btn-info btn-sm">
+                                <span class="float-right btn btn-info btn-sm"
+                                    rel="tooltip" title="Tambah Mahasiswa">
                                     <span class="material-icons">add</span>
                                 </span>
                             </a>
                             <a href="#" data-toggle="modal" data-target="#import-modal">
-                                <span class="float-right btn btn-sm btn-success">
+                                <span class="float-right btn btn-sm btn-success"
+                                    rel="tooltip" title="Impor Data Mahasiswa">
                                     <span class="material-icons">download</span>
                                 </span>
                             </a>
@@ -49,14 +51,16 @@
                                                     <td>{{ $student->name }}</td>
                                                     <td>{{ $student->npm }}</td>
                                                     <td class="text-right">
-                                                        <a href="{{ route('students.edit', $student->id) }}">
+                                                        <a href="{{ route('students.edit', $student->id) }}"
+                                                            rel="tooltip" title="Edit Data {{ $student->name }}">
                                                             <span class="btn btn-warning btn-sm">
                                                                 <span class="material-icons">
                                                                     mode_edit
                                                                 </span>
                                                             </span>
                                                         </a>
-                                                        <a href="{{ route('students.show', $student->id) }}">
+                                                        <a href="{{ route('students.show', $student->id) }}"
+                                                            rel="tooltip" title="Lihat Data {{ $student->name }}">
                                                             <span class="btn btn-info btn-sm">
                                                                 <span class="material-icons">
                                                                     remove_red_eye

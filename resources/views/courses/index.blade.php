@@ -12,8 +12,9 @@
 
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <a href="{{ route('courses.create') }}" data-toggle="tooltip" title="Tambah Data Mata Kuliah">
-                                <span class="float-right btn btn-info btn-sm">
+                            <a href="{{ route('courses.create') }}">
+                                <span class="float-right btn btn-info btn-sm"
+                                    rel="tooltip" title="Tambah Data Mata Kuliah">
                                     <span class="material-icons">add</span>
                                 </span>
                             </a>
@@ -43,14 +44,16 @@
                                                     <td>{{ $course->name }}</td>
                                                     <td>{{ $course->semester }}</td>
                                                     <td class="text-right">
-                                                        <a href="{{ route('courses.edit', $course->id) }}">
+                                                        <a href="{{ route('courses.edit', $course->id) }}"
+                                                            rel="tooltip" title="Edit Mata Kuliah">
                                                             <span class="btn btn-warning btn-sm">
                                                                 <span class="material-icons">
                                                                     mode_edit
                                                                 </span>
                                                             </span>
                                                         </a>
-                                                        <a href="{{ route('courses.show', $course->id) }}">
+                                                        <a href="{{ route('courses.show', $course->id) }}"
+                                                            rel="tooltip" title="Lihat Data">
                                                             <span class="btn btn-info btn-sm">
                                                                 <span class="material-icons">
                                                                     remove_red_eye

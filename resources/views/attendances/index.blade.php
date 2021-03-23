@@ -13,7 +13,8 @@
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <a href="{{ route('attendances.create') }}" data-toggle="tooltip" title="Tambah Data Absensi">
-                                <span class="float-right btn btn-info btn-sm">
+                                <span class="float-right btn btn-info btn-sm"
+                                    rel="tooltip" title="Buat Absensi Baru">
                                     <span class="material-icons">add</span>
                                 </span>
                             </a>
@@ -42,7 +43,8 @@
                                                     <td>{{ $attendance->name }}</td>
                                                     <td>{{ $attendance->course->name }}</td>
                                                     <td class="text-right">
-                                                        <a href="{{ route('attendances.meeting.new', $attendance->id) }}">
+                                                        <a href="{{ route('attendances.meeting.new', $attendance->id) }}"
+                                                            rel="tooltip" title="Buat Pertemuan Baru">
                                                             <span class="btn btn-primary btn-sm">
                                                                 <span class="material-icons">
                                                                     book
@@ -50,14 +52,16 @@
                                                             </span>
                                                         </a>
                                                         <a href="{{ route('attendances.edit', $attendance->id) }}">
-                                                            <span class="btn btn-warning btn-sm">
+                                                            <span class="btn btn-warning btn-sm"
+                                                                rel="tooltip" title="Edit Absensi">
                                                                 <span class="material-icons">
                                                                     mode_edit
                                                                 </span>
                                                             </span>
                                                         </a>
                                                         <a href="{{ route('attendances.show', $attendance->id) }}">
-                                                            <span class="btn btn-info btn-sm">
+                                                            <span class="btn btn-info btn-sm"
+                                                                rel="tooltip" title="Lihat Absensi">
                                                                 <span class="material-icons">
                                                                     remove_red_eye
                                                                 </span>
