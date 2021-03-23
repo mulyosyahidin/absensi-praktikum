@@ -4,6 +4,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('attendances/{attendance}/new-meeting', [AttendanceController::class, 'storeMeeting'])->name('attendances.meeting.new.store');
     Route::get('attendances/{attendance}/report', [AttendanceController::class, 'report'])->name('attendances.report');
     Route::resource('attendances', AttendanceController::class);
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 require __DIR__.'/auth.php';

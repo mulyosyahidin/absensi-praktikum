@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets/themes/material-dashboard/img/favicon.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        @yield('title')
+        @yield('title') | SI Absensi
     </title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -87,6 +87,11 @@
             </ul>
         </div>
     </div>
+
+    <form action="{{ route('logout') }}" method="post" id="logout-form">
+        @csrf
+    </form>
+
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/themes/material-dashboard/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/themes/material-dashboard/js/core/popper.min.js') }}"></script>
@@ -284,8 +289,12 @@
             // Javascript method's body can be found in assets/js/demos.js') }}
             md.initDashboardPageCharts();
 
-        });
+            $('.logout-btn').click(function(e) {
+                e.preventDefault();
 
+                $('#logout-form').submit();
+            });
+        });
     </script>
 
     @stack('custom_js')

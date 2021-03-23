@@ -27,7 +27,7 @@
                                             </tr>
                                             <tr>
                                                 @foreach ($attendance->meetings as $meeting)
-                                                    <td>{{ $meeting->meeting_number }}</td>
+                                                    <td class="text-center">{{ $meeting->meeting_number }}</td>
                                                 @endforeach
                                             </tr>
                                         </thead>

@@ -11,7 +11,7 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item {{ __active('DashboardController') }}">
-                <a class="nav-link" href="./dashboard.html">
+                <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dasbor</p>
                 </a>
@@ -32,12 +32,6 @@
                 <a class="nav-link" href="{{ route('students.index') }}">
                     <i class="material-icons">supervisor_account</i>
                     <p>Mahasiswa</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
-                    <i class="material-icons">pie_chart</i>
-                    <p>Laporan</p>
                 </a>
             </li>
         </ul>

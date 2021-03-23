@@ -92,33 +92,40 @@
                         <div class="card-body">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="profile">
-                                    <table class="table">
-                                        <tbody>
-                                            @foreach ($attendances as $attendance)
-                                                <tr>
-                                                    <td>
-                                                        <a href="">{{ $attendance->name }}</a>
-                                                        <br>
-                                                        {{ $attendance->course->name }}
-                                                    </td>
-                                                    <td class="td-actions text-right">
-                                                        <a href="{{ route('attendances.meeting.new', $attendance->id) }}">
-                                                            <button type="button" rel="tooltip" title="Pertemuan Baru"
-                                                                class="btn btn-primary btn-link btn-sm">
-                                                                <i class="material-icons">book</i>
-                                                            </button>
-                                                        </a>
-                                                        <a href="{{ route('attendances.report', $attendance->id) }}">
-                                                            <button type="button" rel="tooltip" title="Lihat laporan"
-                                                                class="btn btn-info btn-link btn-sm">
-                                                                <i class="material-icons">pie_chart</i>
-                                                            </button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+                                    @if (count($attendances) > 0)
+                                        <table class="table">
+                                            <tbody>
+                                                @foreach ($attendances as $attendance)
+                                                    <tr>
+                                                        <td>
+                                                            <a href="">{{ $attendance->name }}</a>
+                                                            <br>
+                                                            {{ $attendance->course->name }}
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <a
+                                                                href="{{ route('attendances.meeting.new', $attendance->id) }}">
+                                                                <button type="button" rel="tooltip" title="Pertemuan Baru"
+                                                                    class="btn btn-primary btn-link btn-sm">
+                                                                    <i class="material-icons">book</i>
+                                                                </button>
+                                                            </a>
+                                                            <a href="{{ route('attendances.report', $attendance->id) }}">
+                                                                <button type="button" rel="tooltip" title="Lihat laporan"
+                                                                    class="btn btn-info btn-link btn-sm">
+                                                                    <i class="material-icons">pie_chart</i>
+                                                                </button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    @else
+                                        <div class="alert alert-info">
+                                            Tidak ada data untuk ditampilkan.
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>

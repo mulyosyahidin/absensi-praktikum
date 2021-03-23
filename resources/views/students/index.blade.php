@@ -26,8 +26,8 @@
                             <h4 class="card-title">Mahasiswa</h4>
                             <p class="card-category">Kelola Mahasiswa</p>
                         </div>
-                        <div class="card-body">
-                            @if (count($students) > 0)
+                        @if (count($students) > 0)
+                            <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead class=" text-primary">
@@ -69,12 +69,20 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            @else
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="text-center">
+                                    {{ $students->links() }}
+                                </div>
+                            </div>
+                        @else
+                            <div class="card-body">
                                 <div class="alert alert-info">
                                     Tidak ada data Mahasiswa untuk ditampilkan.
                                 </div>
-                            @endif
-                        </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -130,7 +138,7 @@
     <script>
         let fileField = document.getElementById('file');
         fileField.addEventListener('change', function() {
-            let fullPath =fileField.value;
+            let fullPath = fileField.value;
             if (fullPath) {
                 let startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf(
                     '/'));
@@ -138,10 +146,10 @@
                 if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
                     fileName = fileName.substring(1);
                 }
-                
+
                 let uploadFileName = document.querySelector('.upload-file-name');
                 let uploadAlert = document.querySelector('.upload-alert');
-                
+
                 uploadFileName.innerHTML = fileName;
                 uploadAlert.innerHTML = '';
                 uploadAlert.classList.remove('alert');
@@ -152,5 +160,6 @@
         @error('file')
             $('#import-modal').modal('show');
         @enderror
+
     </script>
 @endpush

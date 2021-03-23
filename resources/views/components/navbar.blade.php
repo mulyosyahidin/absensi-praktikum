@@ -22,9 +22,9 @@
                         </p>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                        <a class="dropdown-item" href="#">Profil</a>
+                        <a class="dropdown-item" href="{{ route('profile') }}">Profil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Keluar</a>
+                        <a class="dropdown-item logout-btn" href="#">Keluar</a>
                     </div>
                 </li>
             </ul>
