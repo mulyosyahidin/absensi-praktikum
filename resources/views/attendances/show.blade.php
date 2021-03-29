@@ -37,7 +37,7 @@
                         <div class="card-footer">
                             <div class="text-left">
                                 <a href="{{ route('attendances.report', $attendance->id) }}"
-                                    rel="tooltip" title="Buat Pertemuan Baru">
+                                    rel="tooltip" title="Lihat laporan absensi">
                                     <span class="btn btn-info btn-sm">
                                         <span class="material-icons">
                                             book

@@ -43,9 +43,15 @@
                                                 </tr>
                                                 <tr>
                                                 @foreach ($attendance->meetings as $meeting)
-                                                    <td colspan="1" class="bg-{{ $statuses[$reports[$meeting->id][$student->id]] }} text-white">
-                                                        &nbsp;
-                                                    </td>
+                                                    @isset($reports[$meeting->id][$student->id])
+                                                        <td colspan="1" class="bg-{{ $statuses[$reports[$meeting->id][$student->id]] }} text-white">
+                                                            &nbsp;
+                                                        </td>
+                                                    @else
+                                                        <td colspan="1" class="bg-danger text-white">
+                                                            &nbsp;
+                                                        </td>
+                                                    @endisset
                                                 @endforeach
                                                 </tr>
                                             @endforeach

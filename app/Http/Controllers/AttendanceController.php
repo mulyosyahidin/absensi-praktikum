@@ -152,7 +152,7 @@ class AttendanceController extends Controller
     public function meeting(AttendanceMeeting $meeting)
     {
         $statuses = AttendanceStatus::all();
-        $students = Student::all();
+        $students = Student::orderBy('npm', 'ASC')->get();
 
         return view('attendances.meeting', compact('meeting', 'statuses', 'students'));
     }
@@ -183,10 +183,10 @@ class AttendanceController extends Controller
     public function report(Attendance $attendance)
     {
         $attendance_id = $attendance->id;
-        $students = Student::all();
+        $students = Student::orderBy('npm', 'ASC')->get();
         $statuses = [
             1 => 'success',
-            'info', 'danger', 'warning'
+            'info', 'warning', 'danger'
         ];
 
         $getReports = AttendanceData::whereHas('meeting', function ($meeting) use ($attendance_id) {
